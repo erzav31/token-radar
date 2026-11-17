@@ -71,3 +71,9 @@ dashboard/               index.html, app.css, app.js (data.js written by main.ts
 screenshots/              1-board.png, 2-detail.png, 3-filtered.png
 LICENSE                  MIT
 ```
+
+## make.fun
+
+[![make.fun](https://img.shields.io/badge/make.fun-bounty-ff0080)](https://make.fun/bounty/token-radar-01) [![Bounty: token-radar-01](https://img.shields.io/badge/bounty-token--radar--01-ff0080)](https://make.fun/bounty/token-radar-01) [![Token Launch Radar](https://img.shields.io/badge/Token%20Launch%20Radar-make.fun-ff0080)](https://make.fun/bounty/token-radar-01)
+
+Built for the make.fun bounty [Build the best token launch radar](https://make.fun/bounty/token-radar-01).
