@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar — which pre-token protocol is worth farming next</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="pulse" aria-hidden="true"></div>
+    <div>
+      <h1>TOKEN LAUNCH RADAR</h1>
+      <p class="tag">Which pre-token protocol is worth farming next — and what to do about it.</p>
+    </div>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<section class="method" id="method">
+  <h2>How the radar scores</h2>
+  <p><strong>Implied value = TVL &times; category multiple &times; growth &times; age &times; breadth.</strong>
+  The multiple is the median market-cap/TVL of the token-bearing protocols in the same category,
+  shrunk toward the global median so thin categories stay honest. Growth comes from the 7-day TVL
+  change, age from how long the protocol has run with no token recorded, breadth from how many
+  chains it operates on. Nothing is ranked by name: the board is a function of the snapshot.</p>
+  <p class="fine">Data: sealed DefiLlama snapshot, <span id="asof"></span>. “Records no token” means the
+  snapshot records none — not proof the protocol has none. An implied value is this radar’s own claim
+  about what a launch would be worth if the protocol’s record stayed as it is; it never predicts
+  whether or when a token is issued. This page renders with no network.</p>
+</section>
+
+<section class="controls" aria-label="Filters">
+  <input id="q" type="search" placeholder="Search protocol…" aria-label="Search protocol">
+  <select id="cat" aria-label="Category"><option value="">All categories</option></select>
+  <select id="chain" aria-label="Chain"><option value="">All chains</option></select>
+  <label class="chk"><input id="wl" type="checkbox"> Watchlist only</label>
+  <span class="count" id="count"></span>
+</section>
+
+<section id="detail" class="detail" hidden></section>
+
+<main>
+  <table id="board">
+    <thead><tr>
+      <th data-k="rank">#</th>
+      <th data-k="name">Protocol</th>
+      <th data-k="category">Category</th>
+      <th data-k="chains">Chains</th>
+      <th data-k="tvl" class="num">TVL</th>
+      <th data-k="chg" class="num">7d</th>
+      <th data-k="age" class="num">Age</th>
+      <th data-k="implied" class="num">Implied value</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p class="empty" id="empty" hidden>No protocol matches this filter.</p>
+</main>
+
+<section class="refs">
+  <h2>Already trading — kept out of the ranking</h2>
+  <p>These protocols record a token that already trades, so there is no launch left to farm.
+  They are shown only as the reference the multiples are measured against.</p>
+  <table id="reftable">
+    <thead><tr><th>Protocol</th><th>Category</th><th class="num">TVL</th><th class="num">Market cap</th><th class="num">mcap / TVL</th></tr></thead>
+    <tbody id="refrows"></tbody>
+  </table>
+</section>
+
+<footer>
+  <p>Token Launch Radar · snapshot <span id="asof2"></span> · floor $50,000,000 · built from the sealed snapshot alone.</p>
+</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
